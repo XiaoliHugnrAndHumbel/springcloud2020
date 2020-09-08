@@ -1,0 +1,18 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    fetch-registry: true #不检索服务
+    register-with-eureka: true #不向注册中心注册自己
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+
+#自定义ribbon的超时时间
+ribbon:
+  ReadTimeout:  5000  #处理请求的超时时间，默认为5秒
+  ConnectTimeout: 5000 #连接建立的超时时长，默认5秒
+
+feign:
+  hystrix:
+    enabled: true
